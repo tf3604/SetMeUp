@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ThinkingInSets">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items />
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="000 - Restore Database.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>000 - Restore Database.sql</FullPath>
+        </FileNode>
+        <FileNode Name="010 - Cursor Customer.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>010 - Cursor Customer.sql</FullPath>
+        </FileNode>
+        <FileNode Name="011 - Cursor Order.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>011 - Cursor Order.sql</FullPath>
+        </FileNode>
+        <FileNode Name="012 - Cursor Order ROFF.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>012 - Cursor Order ROFF.sql</FullPath>
+        </FileNode>
+        <FileNode Name="013 - While Loop Order.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>013 - While Loop Order.sql</FullPath>
+        </FileNode>
+        <FileNode Name="020 - Subquery in Select.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>020 - Subquery in Select.sql</FullPath>
+        </FileNode>
+        <FileNode Name="030 - Scalar UDF.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>030 - Scalar UDF.sql</FullPath>
+        </FileNode>
+        <FileNode Name="031 - Inline TVF.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>031 - Inline TVF.sql</FullPath>
+        </FileNode>
+        <FileNode Name="032 - Apply.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>032 - Apply.sql</FullPath>
+        </FileNode>
+        <FileNode Name="040 - Running Total - Cursor.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>040 - Running Total - Cursor.sql</FullPath>
+        </FileNode>
+        <FileNode Name="041 - Running Total - Triangle.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>041 - Running Total - Triangle.sql</FullPath>
+        </FileNode>
+        <FileNode Name="042 - Running Total - Windowing.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>042 - Running Total - Windowing.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>
