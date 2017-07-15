@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ThinkInSetsGui
 {
-    public partial class Form1 : Form
+    public partial class ThinkInSetsMainForm : Form
     {
-        public Form1()
+        public ThinkInSetsMainForm()
         {
             InitializeComponent();
         }
