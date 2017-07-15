@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThinkInSetsTestHarness", "ThinkInSetsTestHarness\ThinkInSetsTestHarness.csproj", "{8D41FA2E-7F73-4C88-B0C5-390A8F6B2498}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThinkInSetsGui", "ThinkInSetsGui\ThinkInSetsGui.csproj", "{500A50D8-4A54-42DE-B38C-F69510810BEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThinkInSetsLib", "ThinkInSetsLib\ThinkInSetsLib.csproj", "{E4B59653-7FAA-43C1-AA81-256260C263B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{8D41FA2E-7F73-4C88-B0C5-390A8F6B2498}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D41FA2E-7F73-4C88-B0C5-390A8F6B2498}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D41FA2E-7F73-4C88-B0C5-390A8F6B2498}.Release|Any CPU.Build.0 = Release|Any CPU
+		{500A50D8-4A54-42DE-B38C-F69510810BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{500A50D8-4A54-42DE-B38C-F69510810BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{500A50D8-4A54-42DE-B38C-F69510810BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{500A50D8-4A54-42DE-B38C-F69510810BEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4B59653-7FAA-43C1-AA81-256260C263B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4B59653-7FAA-43C1-AA81-256260C263B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4B59653-7FAA-43C1-AA81-256260C263B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4B59653-7FAA-43C1-AA81-256260C263B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

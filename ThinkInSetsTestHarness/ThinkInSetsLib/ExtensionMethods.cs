@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ThinkInSetsTestHarness
+namespace ThinkInSetsLib
 {
-    internal static class ExtensionMethods
+    public static class ExtensionMethods
     {
         public static void RemoveMinAndMaxValues<T>(this List<T> list)
         {
