@@ -16,13 +16,14 @@ namespace ThinkInSetsTestHarness
             {
                 Stopwatch clock = Stopwatch.StartNew();
                 // Execute test
+                // ...
                 clock.Stop();
                 executionTimes.Add(clock.Elapsed);
             }
-            executionTimes.Sort((x, y) => x.CompareTo(y));
-            executionTimes.RemoveAt(executionTimes.Count - 1);
-            executionTimes.RemoveAt(0);
+            executionTimes.RemoveMinAndMaxValues();
             double averageTimeInMilliseconds = executionTimes.Average(t => t.TotalMilliseconds);
+
+            Console.WriteLine($"Test completed; average time = {averageTimeInMilliseconds:0.000} ms.");
         }
     }
 }
