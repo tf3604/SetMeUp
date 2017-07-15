@@ -34,8 +34,10 @@
             this.startButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.resultsLabel = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.resultsGrid = new System.Windows.Forms.DataGridView();
+            this.averageRunTimeLabel = new System.Windows.Forms.Label();
+            this.averageRunTimeTextBox = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.resultsGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // currentTestLabel
@@ -95,23 +97,42 @@
             this.resultsLabel.TabIndex = 5;
             this.resultsLabel.Text = "Results";
             // 
-            // dataGridView1
+            // resultsGrid
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.resultsGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 113);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(417, 177);
-            this.dataGridView1.TabIndex = 6;
+            this.resultsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.resultsGrid.Location = new System.Drawing.Point(19, 113);
+            this.resultsGrid.Name = "resultsGrid";
+            this.resultsGrid.Size = new System.Drawing.Size(417, 226);
+            this.resultsGrid.TabIndex = 6;
+            // 
+            // averageRunTimeLabel
+            // 
+            this.averageRunTimeLabel.AutoSize = true;
+            this.averageRunTimeLabel.Location = new System.Drawing.Point(19, 356);
+            this.averageRunTimeLabel.Name = "averageRunTimeLabel";
+            this.averageRunTimeLabel.Size = new System.Drawing.Size(87, 13);
+            this.averageRunTimeLabel.TabIndex = 7;
+            this.averageRunTimeLabel.Text = "Average run time";
+            // 
+            // averageRunTimeTextBox
+            // 
+            this.averageRunTimeTextBox.Location = new System.Drawing.Point(133, 353);
+            this.averageRunTimeTextBox.Name = "averageRunTimeTextBox";
+            this.averageRunTimeTextBox.ReadOnly = true;
+            this.averageRunTimeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.averageRunTimeTextBox.TabIndex = 8;
             // 
             // ThinkInSetsMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 311);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(460, 383);
+            this.Controls.Add(this.averageRunTimeTextBox);
+            this.Controls.Add(this.averageRunTimeLabel);
+            this.Controls.Add(this.resultsGrid);
             this.Controls.Add(this.resultsLabel);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.startButton);
@@ -121,7 +142,7 @@
             this.MinimumSize = new System.Drawing.Size(400, 350);
             this.Name = "ThinkInSetsMainForm";
             this.Text = "Think in Sets Test Harness";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resultsGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,7 +156,9 @@
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Label resultsLabel;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView resultsGrid;
+        private System.Windows.Forms.Label averageRunTimeLabel;
+        private System.Windows.Forms.TextBox averageRunTimeTextBox;
     }
 }
 
