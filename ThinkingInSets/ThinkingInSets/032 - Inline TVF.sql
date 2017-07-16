@@ -10,7 +10,8 @@ as
 return
 select top 1 od.ProductId
 from dbo.OrderDetail od
-where od.OrderId = @OrderId;
+where od.OrderId = @OrderId
+order by od.OrderDetailId;
 go
 
 select oh.OrderId,

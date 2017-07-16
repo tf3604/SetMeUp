@@ -11,7 +11,8 @@ begin
 
 	select top 1 @ProductId = od.ProductId
 	from dbo.OrderDetail od
-	where od.OrderId = @OrderId;
+	where od.OrderId = @OrderId
+	order by od.OrderDetailId;
 
 	return @ProductId;
 end

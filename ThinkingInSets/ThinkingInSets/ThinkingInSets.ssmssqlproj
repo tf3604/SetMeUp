@@ -36,6 +36,12 @@
           <AssociatedConnUserName />
           <FullPath>013 - While Loop Order.sql</FullPath>
         </FileNode>
+        <FileNode Name="014 - Set-based Order.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>014 - Set-based Order.sql</FullPath>
+        </FileNode>
         <FileNode Name="020 - Subquery in Select.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
@@ -48,17 +54,29 @@
           <AssociatedConnUserName />
           <FullPath>030 - Scalar UDF.sql</FullPath>
         </FileNode>
-        <FileNode Name="031 - Inline TVF.sql">
+        <FileNode Name="031 - Scalar UDF Constant.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
-          <FullPath>031 - Inline TVF.sql</FullPath>
+          <FullPath>031 - Scalar UDF Constant.sql</FullPath>
         </FileNode>
-        <FileNode Name="032 - Apply.sql">
+        <FileNode Name="032 - Inline TVF.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
-          <FullPath>032 - Apply.sql</FullPath>
+          <FullPath>032 - Inline TVF.sql</FullPath>
+        </FileNode>
+        <FileNode Name="033 - CLR.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>033 - CLR.sql</FullPath>
+        </FileNode>
+        <FileNode Name="034 - Apply.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>034 - Apply.sql</FullPath>
         </FileNode>
         <FileNode Name="040 - Running Total - Cursor.sql">
           <AssociatedConnectionMoniker />

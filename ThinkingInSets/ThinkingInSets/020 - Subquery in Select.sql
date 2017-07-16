@@ -8,6 +8,7 @@ select oh.OrderId,
 		select top 1 od.ProductId
 		from dbo.OrderDetail od
 		where od.OrderId = oh.OrderId
+		order by od.OrderDetailId
 	) Line1ProductId
 from dbo.OrderHeader oh;
 
@@ -22,6 +23,7 @@ outer apply
 	select top 1 od.ProductId
 	from dbo.OrderDetail od
 	where od.OrderId = oh.OrderId
+	order by od.OrderDetailId
 ) od;
 
 
@@ -34,6 +36,7 @@ where
 	select top 1 od.ProductId
 	from dbo.OrderDetail od
 	where od.OrderId = oh.OrderId
+	order by od.OrderDetailId
 ) = 4926;
 
 select oh.OrderId,
@@ -45,5 +48,6 @@ outer apply
 	select top 1 od.ProductId
 	from dbo.OrderDetail od
 	where od.OrderId = oh.OrderId
+	order by od.OrderDetailId
 ) od
 where od.ProductId = 4926;

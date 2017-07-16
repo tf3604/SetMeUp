@@ -7,7 +7,7 @@ go
 create table #OrderInfo
 (
 	OrderId int not null,
-	OrderDate datetime not null,
+	OrderDate datetime2 not null,
 	CustomerId int not null,
 	OrderLineNbr int not null,
 	ProductId int not null,
@@ -29,30 +29,21 @@ where c.State in ('CA', 'NY')
 order by oh.OrderId, od.OrderDetailId;
 
 declare @OrderId int;
-declare @OrderDate datetime;
+declare @OrderDate datetime2;
 declare @CustomerId int;
-declare @OrderLineNbr int;
+declare @OrderLineNbr int = 0;
 declare @ProductId int;
 declare @Quantity int;
 declare @UnitPrice money;
 declare @Amount money;
-declare @RunningTotal money;
-declare @PreviousOrderId int;
+declare @RunningTotal money = 0.00;
 
 open csr;
 
 fetch next from csr into @OrderId, @OrderDate, @CustomerId, @ProductId, @Quantity, @UnitPrice;
-select @PreviousOrderId = @OrderId - 1;
 
 while @@fetch_status = 0
 begin
-	if @OrderId != @PreviousOrderId
-	begin
-		select @PreviousOrderId = @OrderId,
-			@OrderLineNbr = 0,
-			@RunningTotal = 0.00;
-	end
-
 	select @OrderLineNbr += 1;
 	select @Amount = @Quantity * @UnitPrice;
 	select @RunningTotal += @Amount;
