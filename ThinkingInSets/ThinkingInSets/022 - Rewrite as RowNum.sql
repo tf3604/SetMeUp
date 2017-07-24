@@ -12,36 +12,30 @@ begin
 	(
 		OrderId int not null,
 		OrderDate datetime null,
-		CustomerId int null
+		CustomerId int null,
+		Line1ProductId int null
 	);
 
-	declare csr cursor
-	for
-	select oh.OrderId, oh.OrderDate, oh.CustomerId
-	from dbo.OrderHeader oh;
-
-	declare @OrderId int;
-	declare @OrderDate date;
-	declare @CustomerId int;
-
-	open csr;
-
-	fetch next from csr into @OrderId, @OrderDate, @CustomerId;
-	while @@fetch_status = 0
-	begin
-		insert #Orders (OrderId, OrderDate, CustomerId)
-		values (@OrderId, @OrderDate, @CustomerId);
-
-		fetch next from csr into @OrderId, @OrderDate, @CustomerId;
-	end
-
-	close csr;
-	deallocate csr;
+	with ProductIdWithLineNbr as
+	(
+		select od.ProductId,
+			od.OrderId,
+			row_number() over (partition by od.OrderId order by od.OrderDetailId) LineNbr
+		from dbo.OrderDetail od
+	)
+	insert #Orders (OrderId, OrderDate, CustomerId, Line1ProductId)
+	select oh.OrderId,
+		oh.OrderDate,
+		oh.CustomerId,
+		pwl.ProductId Line1ProductId
+	from dbo.OrderHeader oh
+	inner join ProductIdWithLineNbr pwl on oh.OrderId = pwl.OrderId
+	where pwl.LineNbr = 1;
 
 	declare @TestEndTime datetime2 = sysdatetime();
 
 	insert dbo.ExecutionResult (TestName, StartTime, EndTime)
-	values (N'Cursor - Order', @TestStartTime, @TestEndTime);
+	values (N'Subquery in Select - Rewrite as RowNum', @TestStartTime, @TestEndTime);
 
 	select @loopNbr += 1;
 end
@@ -52,7 +46,7 @@ with MostRecentTestRun as
 	select top 5 xr.ID, xr.TestName, xr.StartTime, xr.EndTime,
 		   datediff(millisecond, xr.StartTime, xr.EndTime) RunTimeMs
 	from dbo.ExecutionResult xr
-	where xr.TestName = N'Cursor - Order'
+	where xr.TestName = N'Subquery in Select - Rewrite as RowNum'
 	order by xr.StartTime desc
 ), MiddleRuns as
 (

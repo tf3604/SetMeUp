@@ -12,36 +12,27 @@ begin
 	(
 		OrderId int not null,
 		OrderDate datetime null,
-		CustomerId int null
+		CustomerId int null,
+		Line1ProductId int null
 	);
 
-	declare csr cursor
-	for
-	select oh.OrderId, oh.OrderDate, oh.CustomerId
-	from dbo.OrderHeader oh;
-
-	declare @OrderId int;
-	declare @OrderDate date;
-	declare @CustomerId int;
-
-	open csr;
-
-	fetch next from csr into @OrderId, @OrderDate, @CustomerId;
-	while @@fetch_status = 0
-	begin
-		insert #Orders (OrderId, OrderDate, CustomerId)
-		values (@OrderId, @OrderDate, @CustomerId);
-
-		fetch next from csr into @OrderId, @OrderDate, @CustomerId;
-	end
-
-	close csr;
-	deallocate csr;
+	insert #Orders (OrderId, OrderDate, CustomerId)
+	select oh.OrderId,
+		oh.OrderDate,
+		oh.CustomerId
+	from dbo.OrderHeader oh
+	where
+	(
+		select top 1 od.ProductId
+		from dbo.OrderDetail od
+		where od.OrderId = oh.OrderId
+		order by od.OrderDetailId
+	) = 4926;
 
 	declare @TestEndTime datetime2 = sysdatetime();
 
 	insert dbo.ExecutionResult (TestName, StartTime, EndTime)
-	values (N'Cursor - Order', @TestStartTime, @TestEndTime);
+	values (N'Subquery in Where', @TestStartTime, @TestEndTime);
 
 	select @loopNbr += 1;
 end
@@ -52,7 +43,7 @@ with MostRecentTestRun as
 	select top 5 xr.ID, xr.TestName, xr.StartTime, xr.EndTime,
 		   datediff(millisecond, xr.StartTime, xr.EndTime) RunTimeMs
 	from dbo.ExecutionResult xr
-	where xr.TestName = N'Cursor - Order'
+	where xr.TestName = N'Subquery in Where'
 	order by xr.StartTime desc
 ), MiddleRuns as
 (

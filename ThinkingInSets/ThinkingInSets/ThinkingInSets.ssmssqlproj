@@ -12,6 +12,12 @@
           <AssociatedConnUserName />
           <FullPath>000 - Restore Database.sql</FullPath>
         </FileNode>
+        <FileNode Name="001 - Test Harness.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>001 - Test Harness.sql</FullPath>
+        </FileNode>
         <FileNode Name="010 - Cursor Customer.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
@@ -48,6 +54,36 @@
           <AssociatedConnUserName />
           <FullPath>020 - Subquery in Select.sql</FullPath>
         </FileNode>
+        <FileNode Name="021 - Rewrite as Apply.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>021 - Rewrite as Apply.sql</FullPath>
+        </FileNode>
+        <FileNode Name="022 - Rewrite as RowNum.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>022 - Rewrite as RowNum.sql</FullPath>
+        </FileNode>
+        <FileNode Name="023 - Subquery in Where.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>023 - Subquery in Where.sql</FullPath>
+        </FileNode>
+        <FileNode Name="024 - Rewrite as Apply.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>024 - Rewrite as Apply.sql</FullPath>
+        </FileNode>
+        <FileNode Name="025 - Rewrite as RowNum.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>025 - Rewrite as RowNum.sql</FullPath>
+        </FileNode>
         <FileNode Name="030 - Scalar UDF.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
@@ -60,23 +96,35 @@
           <AssociatedConnUserName />
           <FullPath>031 - Scalar UDF Constant.sql</FullPath>
         </FileNode>
-        <FileNode Name="032 - Inline TVF.sql">
+        <FileNode Name="032 - Multi Statement TVF.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
-          <FullPath>032 - Inline TVF.sql</FullPath>
+          <FullPath>032 - Multi Statement TVF.sql</FullPath>
         </FileNode>
-        <FileNode Name="033 - CLR.sql">
+        <FileNode Name="033 - Inline TVF.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
-          <FullPath>033 - CLR.sql</FullPath>
+          <FullPath>033 - Inline TVF.sql</FullPath>
         </FileNode>
-        <FileNode Name="034 - Apply.sql">
+        <FileNode Name="034 - CLR.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
-          <FullPath>034 - Apply.sql</FullPath>
+          <FullPath>034 - CLR.sql</FullPath>
+        </FileNode>
+        <FileNode Name="035 - Apply.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>035 - Apply.sql</FullPath>
+        </FileNode>
+        <FileNode Name="036 - RowNum.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>036 - RowNum.sql</FullPath>
         </FileNode>
         <FileNode Name="040 - Running Total - Cursor.sql">
           <AssociatedConnectionMoniker />
