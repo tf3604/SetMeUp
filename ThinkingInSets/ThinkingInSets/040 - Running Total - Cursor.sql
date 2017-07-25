@@ -89,3 +89,5 @@ with MostRecentTestRun as
 select ID, TestName, StartTime, EndTime, RunTimeMs,
 	(select avg(RunTimeMs) from MiddleRuns) AvgRunTimeMs
 from MiddleRuns;
+
+select count(*) from #OrderInfo;

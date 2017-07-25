@@ -1,7 +1,7 @@
 use CorpDB;
 go
 
-drop function if exists dbo.GetLine1ProductIdTVF
+drop function if exists dbo.GetLine1ProductIdInlineTVF
 go
 
 create function dbo.GetLine1ProductIdInlineTVF (@OrderId int)

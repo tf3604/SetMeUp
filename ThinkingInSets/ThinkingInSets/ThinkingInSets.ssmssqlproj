@@ -12,11 +12,11 @@
           <AssociatedConnUserName />
           <FullPath>000 - Restore Database.sql</FullPath>
         </FileNode>
-        <FileNode Name="001 - Create CLR Objects.sql">
+        <FileNode Name="001 - Create DB Objects.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
-          <FullPath>001 - Create CLR Objects.sql</FullPath>
+          <FullPath>001 - Create DB Objects.sql</FullPath>
         </FileNode>
         <FileNode Name="002 - Test Harness.sql">
           <AssociatedConnectionMoniker />
@@ -108,23 +108,23 @@
           <AssociatedConnUserName />
           <FullPath>032 - Multi Statement TVF.sql</FullPath>
         </FileNode>
-        <FileNode Name="033 - Inline TVF.sql">
+        <FileNode Name="033 - CLR.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
-          <FullPath>033 - Inline TVF.sql</FullPath>
+          <FullPath>033 - CLR.sql</FullPath>
         </FileNode>
-        <FileNode Name="034 - CLR.sql">
+        <FileNode Name="034 - Apply.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
-          <FullPath>034 - CLR.sql</FullPath>
+          <FullPath>034 - Apply.sql</FullPath>
         </FileNode>
-        <FileNode Name="035 - Apply.sql">
+        <FileNode Name="035 - Inline TVF.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
-          <FullPath>035 - Apply.sql</FullPath>
+          <FullPath>035 - Inline TVF.sql</FullPath>
         </FileNode>
         <FileNode Name="036 - RowNum.sql">
           <AssociatedConnectionMoniker />
@@ -149,6 +149,18 @@
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
           <FullPath>042 - Running Total - Windowing.sql</FullPath>
+        </FileNode>
+        <FileNode Name="050 - SSIS - Command (Results).sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>050 - SSIS - Command (Results).sql</FullPath>
+        </FileNode>
+        <FileNode Name="051 - SSIS - Staging.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>051 - SSIS - Staging.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>

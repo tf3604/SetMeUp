@@ -1,6 +1,27 @@
 use CorpDB;
 go
 
+create table dbo.ExecutionResult
+(
+	ID int not null identity(1,1),
+	TestName nvarchar(75) not null,
+	StartTime datetime2 not null,
+	EndTime datetime2 null,
+	constraint pk_ExecutionResult primary key clustered (ID)
+);
+go
+
+if not exists (select * from sys.schemas s where s.name = 'stage')
+begin
+	declare @sql nvarchar(max) = 'create schema stage authorization dbo;';
+	exec(@sql);
+end
+
+go
+
+exec sp_configure 'clr enabled', 1;
+reconfigure;
+
 GO
 PRINT N'Creating [ClrFunctionPerformance]...';
 
