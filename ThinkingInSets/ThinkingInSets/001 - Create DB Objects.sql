@@ -16,7 +16,17 @@ begin
 	declare @sql nvarchar(max) = 'create schema stage authorization dbo;';
 	exec(@sql);
 end
+go
 
+drop table if exists stage.DataFile
+
+create table stage.DataFile
+(
+	DataFileId int not null identity(1,1),
+	FilePath nvarchar(260) not null,
+	LastWriteTime datetime2 null,
+	constraint pk_DataFile primary key clustered (DataFileId)
+);
 go
 
 exec sp_configure 'clr enabled', 1;
