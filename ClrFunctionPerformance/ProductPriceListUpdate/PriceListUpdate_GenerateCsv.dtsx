@@ -1,0 +1,351 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/24/2017 11:19:55 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LUDMILLA"
+  DTS:CreatorName="HANSENFAM\hansen"
+  DTS:DTSID="{D7B9EE2E-6F46-4D18-8A83-D81D122B62DF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="PriceListUpdate_GenerateCsv"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{7425C55D-61EF-4326-921D-A3B45B6222DA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CorpDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{78B9E80A-AFB8-4500-A33D-BC80061AE5CB}"
+      DTS:ObjectName="CorpDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.\sql2016;Initial Catalog=CorpDB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF_NewUnitPriceCsv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{A5BD4C2E-DA70-4D3B-A9CF-C4732A9E0403}"
+      DTS:ObjectName="FF_NewUnitPriceCsv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="c:\temp\UpdatedPriceList.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductId"
+              DTS:DTSID="{204542E8-CFA7-45F2-9D89-FB6B0C652CC9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NewUnitPrice"
+              DTS:DTSID="{62DB8135-44C0-4749-ABFD-DE17E0A3B2FC}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT_UpdatePrices"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E3F57133-4C88-4616-9950-7EA1B64D9809}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_UpdatePrices"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_UpdatePrices\FFDST_CsvFile"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Flat File Destination"
+              localeId="1033"
+              name="FFDST_CsvFile">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_UpdatePrices\FFDST_CsvFile.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[FF_NewUnitPriceCsv]"
+                  connectionManagerRefId="Package.ConnectionManagers[FF_NewUnitPriceCsv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_UpdatePrices\FFDST_CsvFile.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_UpdatePrices\FFDST_CsvFile.Inputs[Flat File Destination Input].Columns[ProductId]"
+                      cachedDataType="i4"
+                      cachedName="ProductId"
+                      externalMetadataColumnId="Package\DFT_UpdatePrices\FFDST_CsvFile.Inputs[Flat File Destination Input].ExternalColumns[ProductId]"
+                      lineageId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Output].Columns[ProductId]" />
+                    <inputColumn
+                      refId="Package\DFT_UpdatePrices\FFDST_CsvFile.Inputs[Flat File Destination Input].Columns[NewUnitPrice]"
+                      cachedDataType="numeric"
+                      cachedName="NewUnitPrice"
+                      cachedPrecision="23"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\DFT_UpdatePrices\FFDST_CsvFile.Inputs[Flat File Destination Input].ExternalColumns[NewUnitPrice]"
+                      lineageId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Output].Columns[NewUnitPrice]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_UpdatePrices\FFDST_CsvFile.Inputs[Flat File Destination Input].ExternalColumns[ProductId]"
+                      dataType="i4"
+                      name="ProductId" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_UpdatePrices\FFDST_CsvFile.Inputs[Flat File Destination Input].ExternalColumns[NewUnitPrice]"
+                      dataType="cy"
+                      name="NewUnitPrice" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\DFT_UpdatePrices\OLESRC_Product"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLESRC_Product"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select p.ProductId, round(p.UnitPrice * 1.05, 2) NewUnitPrice
+from CorpDB.dbo.Product p</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_UpdatePrices\OLESRC_Product.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CorpDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[CorpDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Output].Columns[ProductId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Output].ExternalColumns[ProductId]"
+                      lineageId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Output].Columns[ProductId]"
+                      name="ProductId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Output].Columns[NewUnitPrice]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Output].ExternalColumns[NewUnitPrice]"
+                      lineageId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Output].Columns[NewUnitPrice]"
+                      name="NewUnitPrice"
+                      precision="23"
+                      scale="6"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Output].ExternalColumns[ProductId]"
+                      dataType="i4"
+                      name="ProductId" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Output].ExternalColumns[NewUnitPrice]"
+                      dataType="numeric"
+                      name="NewUnitPrice"
+                      precision="23"
+                      scale="6" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Error Output].Columns[ProductId]"
+                      dataType="i4"
+                      lineageId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Error Output].Columns[ProductId]"
+                      name="ProductId" />
+                    <outputColumn
+                      refId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Error Output].Columns[NewUnitPrice]"
+                      dataType="numeric"
+                      lineageId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Error Output].Columns[NewUnitPrice]"
+                      name="NewUnitPrice"
+                      precision="23"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_UpdatePrices.Paths[OLE DB Source Output]"
+              endId="Package\DFT_UpdatePrices\FFDST_CsvFile.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT_UpdatePrices\OLESRC_Product.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="165,42"
+          Id="Package\DFT_UpdatePrices"
+          TopLeft="86,85" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT_UpdatePrices">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="168,42"
+          Id="Package\DFT_UpdatePrices\OLESRC_Product"
+          TopLeft="160,51" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\DFT_UpdatePrices\FFDST_CsvFile"
+          TopLeft="166,161" />
+        <EdgeLayout
+          Id="Package\DFT_UpdatePrices.Paths[OLE DB Source Output]"
+          TopLeft="244.25,93">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68"
+              Start="0,0"
+              End="0,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_UpdatePrices\OLESRC_Product">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

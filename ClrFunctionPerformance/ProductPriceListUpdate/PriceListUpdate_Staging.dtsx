@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LUDMILLA"
   DTS:CreatorName="HANSENFAM\hansen"
-  DTS:DTSID="{938E2FAD-2B4A-4891-B736-1422AB2118A6}"
+  DTS:DTSID="{F9693D99-362A-47C1-928C-EE18AEC08590}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="13.0.2165.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="PriceListUpdate_Command"
+  DTS:ObjectName="PriceListUpdate_Staging"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{3786A179-82FA-4F03-ABF1-CCBB12DB046D}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{5E84F19E-9242-4971-BB04-21C21E5F2C6E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CorpDB]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{ED0F3FF8-0EB5-4AF2-8241-A8D7F2DD464D}"
+      DTS:DTSID="{A45E4BE6-58A4-4AB7-BE32-F7C3757EAE7D}"
       DTS:ObjectName="CorpDB">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -29,7 +29,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[FF_NewUnitPriceCsv]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{5BED772A-9E04-448F-8E43-494CBA015E7D}"
+      DTS:DTSID="{C0C3DC57-82CE-45FD-966A-A624F9BD8ED1}"
       DTS:ObjectName="FF_NewUnitPriceCsv">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -48,7 +48,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ProductId"
-              DTS:DTSID="{787CC59C-C005-4196-9B1E-B011A534864A}"
+              DTS:DTSID="{3FDCEEB4-4781-4D5E-845A-AB15A07BEB40}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -56,7 +56,7 @@
               DTS:DataType="6"
               DTS:TextQualified="True"
               DTS:ObjectName="NewUnitPrice"
-              DTS:DTSID="{6443EF78-513B-48CC-B43F-4D5529E88A6C}"
+              DTS:DTSID="{770697D6-6475-40E9-B86F-E249FD88CAE1}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -66,7 +66,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{855CA2D2-E8C7-43B7-AFDD-30DBFDA51225}"
+      DTS:DTSID="{29CE108C-A605-4FE5-9BF7-EE1C7EAF6394}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="EndTime">
@@ -75,7 +75,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{3C0478E7-C380-40B3-93E0-6D89415834BB}"
+      DTS:DTSID="{8015C30B-4295-45C8-B2DC-CA977277585F}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="ExecutionResultID">
@@ -84,7 +84,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{64D3F698-50B2-4074-B626-33E02798423E}"
+      DTS:DTSID="{DECC4AB0-DF4A-434D-BA5F-9116FAC5A911}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LoopNbr">
@@ -93,7 +93,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7E957F1F-FAF6-484C-84F2-D4ED13921BD4}"
+      DTS:DTSID="{75DB0ECE-D822-4301-A181-1675AF34C82C}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="StartTime">
@@ -107,7 +107,7 @@
       DTS:AssignExpression="@LoopNbr = @LoopNbr + 1"
       DTS:CreationName="STOCK:FORLOOP"
       DTS:Description="For Loop Container"
-      DTS:DTSID="{F0F82493-81E7-49C4-A655-7EC4089950AE}"
+      DTS:DTSID="{6B9006A7-6419-4DC9-A622-C0A9AF0EBA44}"
       DTS:EvalExpression="@LoopNbr &lt;= 5"
       DTS:ExecutableType="STOCK:FORLOOP"
       DTS:InitExpression="@LoopNbr = 1"
@@ -120,20 +120,21 @@
           DTS:refId="Package\FOR_RunTest\SEQ_DemoTest"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
-          DTS:DTSID="{F8186C91-D5CD-4377-A0BE-7304197C1ADB}"
+          DTS:DTSID="{7B0488AB-A60B-417C-A3B8-E3034AA9D04A}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="SEQ_DemoTest">
           <DTS:Variables />
           <DTS:Executables>
             <DTS:Executable
-              DTS:refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices"
+              DTS:refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage"
               DTS:CreationName="Microsoft.Pipeline"
+              DTS:DelayValidation="True"
               DTS:Description="Data Flow Task"
-              DTS:DTSID="{41C5C6A0-3AFE-4937-8625-5D18C6021ADF}"
+              DTS:DTSID="{16F35EC2-350E-4BB8-8B51-DFB11CFEAC5B}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
-              DTS:ObjectName="DFT_UpdatePrices"
+              DTS:ObjectName="DFT_LoadStage"
               DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
               <DTS:Variables />
               <DTS:ObjectData>
@@ -141,7 +142,7 @@
                   version="1">
                   <components>
                     <component
-                      refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile"
+                      refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile"
                       componentClassID="Microsoft.FlatFileSource"
                       contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                       description="Flat File Source"
@@ -161,23 +162,23 @@
                       </properties>
                       <connections>
                         <connection
-                          refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile.Connections[FlatFileConnection]"
+                          refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile.Connections[FlatFileConnection]"
                           connectionManagerID="Package.ConnectionManagers[FF_NewUnitPriceCsv]"
                           connectionManagerRefId="Package.ConnectionManagers[FF_NewUnitPriceCsv]"
                           name="FlatFileConnection" />
                       </connections>
                       <outputs>
                         <output
-                          refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile.Outputs[Flat File Source Output]"
+                          refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile.Outputs[Flat File Source Output]"
                           name="Flat File Source Output">
                           <outputColumns>
                             <outputColumn
-                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile.Outputs[Flat File Source Output].Columns[ProductId]"
+                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile.Outputs[Flat File Source Output].Columns[ProductId]"
                               dataType="i4"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile.Outputs[Flat File Source Output].ExternalColumns[ProductId]"
-                              lineageId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile.Outputs[Flat File Source Output].Columns[ProductId]"
+                              externalMetadataColumnId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile.Outputs[Flat File Source Output].ExternalColumns[ProductId]"
+                              lineageId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile.Outputs[Flat File Source Output].Columns[ProductId]"
                               name="ProductId"
                               truncationRowDisposition="FailComponent">
                               <properties>
@@ -192,12 +193,12 @@
                               </properties>
                             </outputColumn>
                             <outputColumn
-                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile.Outputs[Flat File Source Output].Columns[NewUnitPrice]"
+                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile.Outputs[Flat File Source Output].Columns[NewUnitPrice]"
                               dataType="cy"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile.Outputs[Flat File Source Output].ExternalColumns[NewUnitPrice]"
-                              lineageId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile.Outputs[Flat File Source Output].Columns[NewUnitPrice]"
+                              externalMetadataColumnId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile.Outputs[Flat File Source Output].ExternalColumns[NewUnitPrice]"
+                              lineageId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile.Outputs[Flat File Source Output].Columns[NewUnitPrice]"
                               name="NewUnitPrice"
                               truncationRowDisposition="FailComponent">
                               <properties>
@@ -215,37 +216,37 @@
                           <externalMetadataColumns
                             isUsed="True">
                             <externalMetadataColumn
-                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile.Outputs[Flat File Source Output].ExternalColumns[ProductId]"
+                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile.Outputs[Flat File Source Output].ExternalColumns[ProductId]"
                               dataType="i4"
                               name="ProductId" />
                             <externalMetadataColumn
-                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile.Outputs[Flat File Source Output].ExternalColumns[NewUnitPrice]"
+                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile.Outputs[Flat File Source Output].ExternalColumns[NewUnitPrice]"
                               dataType="cy"
                               name="NewUnitPrice" />
                           </externalMetadataColumns>
                         </output>
                         <output
-                          refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile.Outputs[Flat File Source Error Output]"
+                          refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile.Outputs[Flat File Source Error Output]"
                           isErrorOut="true"
                           name="Flat File Source Error Output">
                           <outputColumns>
                             <outputColumn
-                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                               codePage="65001"
                               dataType="text"
                               description="Flat File Source Error Output Column"
-                              lineageId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                              lineageId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                               name="Flat File Source Error Output Column" />
                             <outputColumn
-                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                               dataType="i4"
-                              lineageId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                              lineageId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                               name="ErrorCode"
                               specialFlags="1" />
                             <outputColumn
-                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                               dataType="i4"
-                              lineageId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                              lineageId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                               name="ErrorColumn"
                               specialFlags="2" />
                           </outputColumns>
@@ -254,13 +255,13 @@
                       </outputs>
                     </component>
                     <component
-                      refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\OLECMD_UpdateCorpDB"
-                      componentClassID="Microsoft.OLEDBCommand"
-                      contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-                      description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-                      name="OLECMD_UpdateCorpDB"
+                      refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\OLEDST_StageProductPrice"
+                      componentClassID="Microsoft.OLEDBDestination"
+                      contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                      description="OLE DB Destination"
+                      name="OLEDST_StageProductPrice"
                       usesDispositions="true"
-                      version="2">
+                      version="4">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -268,20 +269,50 @@
                           name="CommandTimeout">0</property>
                         <property
                           dataType="System.String"
+                          description="Specifies the name of the database object used to open a rowset."
+                          name="OpenRowset">[stage].[ProductPrice]</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the variable that contains the name of the database object used to open a rowset."
+                          name="OpenRowsetVariable"></property>
+                        <property
+                          dataType="System.String"
                           description="The SQL command to be executed."
-                          expressionType="Notify"
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update dbo.Product
-set UnitPrice = ?
-where ProductId = ?;</property>
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the column code page to use when code page information is unavailable from the data source."
                           name="DefaultCodePage">1252</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Forces the use of the DefaultCodePage property value when describing character data."
+                          name="AlwaysUseDefaultCodePage">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the mode used to access the database."
+                          name="AccessMode"
+                          typeConverter="AccessMode">3</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepIdentity">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepNulls">false</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                          name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                          name="FastLoadMaxInsertCommitSize">2147483647</property>
                       </properties>
                       <connections>
                         <connection
-                          refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\OLECMD_UpdateCorpDB.Connections[OleDbConnection]"
+                          refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\OLEDST_StageProductPrice.Connections[OleDbConnection]"
                           connectionManagerID="Package.ConnectionManagers[CorpDB]"
                           connectionManagerRefId="Package.ConnectionManagers[CorpDB]"
                           description="The OLE DB runtime connection used to access the database."
@@ -289,77 +320,56 @@ where ProductId = ?;</property>
                       </connections>
                       <inputs>
                         <input
-                          refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\OLECMD_UpdateCorpDB.Inputs[OLE DB Command Input]"
-                          errorOrTruncationOperation="Command Execution"
+                          refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\OLEDST_StageProductPrice.Inputs[OLE DB Destination Input]"
+                          errorOrTruncationOperation="Insert"
                           errorRowDisposition="FailComponent"
                           hasSideEffects="true"
-                          name="OLE DB Command Input">
+                          name="OLE DB Destination Input">
                           <inputColumns>
                             <inputColumn
-                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\OLECMD_UpdateCorpDB.Inputs[OLE DB Command Input].Columns[NewUnitPrice]"
-                              cachedDataType="cy"
-                              cachedName="NewUnitPrice"
-                              externalMetadataColumnId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\OLECMD_UpdateCorpDB.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                              lineageId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile.Outputs[Flat File Source Output].Columns[NewUnitPrice]" />
-                            <inputColumn
-                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\OLECMD_UpdateCorpDB.Inputs[OLE DB Command Input].Columns[ProductId]"
+                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\OLEDST_StageProductPrice.Inputs[OLE DB Destination Input].Columns[ProductId]"
                               cachedDataType="i4"
                               cachedName="ProductId"
-                              externalMetadataColumnId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\OLECMD_UpdateCorpDB.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                              lineageId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile.Outputs[Flat File Source Output].Columns[ProductId]" />
+                              externalMetadataColumnId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\OLEDST_StageProductPrice.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                              lineageId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile.Outputs[Flat File Source Output].Columns[ProductId]" />
+                            <inputColumn
+                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\OLEDST_StageProductPrice.Inputs[OLE DB Destination Input].Columns[NewUnitPrice]"
+                              cachedDataType="cy"
+                              cachedName="NewUnitPrice"
+                              externalMetadataColumnId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\OLEDST_StageProductPrice.Inputs[OLE DB Destination Input].ExternalColumns[NewUnitPrice]"
+                              lineageId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile.Outputs[Flat File Source Output].Columns[NewUnitPrice]" />
                           </inputColumns>
                           <externalMetadataColumns
                             isUsed="True">
                             <externalMetadataColumn
-                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\OLECMD_UpdateCorpDB.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                              dataType="cy"
-                              name="Param_0">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                                  name="DBParamInfoFlags">81</property>
-                              </properties>
-                            </externalMetadataColumn>
-                            <externalMetadataColumn
-                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\OLECMD_UpdateCorpDB.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\OLEDST_StageProductPrice.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
                               dataType="i4"
-                              name="Param_1">
-                              <properties>
-                                <property
-                                  dataType="System.Int32"
-                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                                  name="DBParamInfoFlags">81</property>
-                              </properties>
-                            </externalMetadataColumn>
+                              name="ProductId" />
+                            <externalMetadataColumn
+                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\OLEDST_StageProductPrice.Inputs[OLE DB Destination Input].ExternalColumns[NewUnitPrice]"
+                              dataType="cy"
+                              name="NewUnitPrice" />
                           </externalMetadataColumns>
                         </input>
                       </inputs>
                       <outputs>
                         <output
-                          refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\OLECMD_UpdateCorpDB.Outputs[OLE DB Command Output]"
-                          exclusionGroup="1"
-                          name="OLE DB Command Output"
-                          synchronousInputId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\OLECMD_UpdateCorpDB.Inputs[OLE DB Command Input]">
-                          <externalMetadataColumns />
-                        </output>
-                        <output
-                          refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\OLECMD_UpdateCorpDB.Outputs[OLE DB Command Error Output]"
+                          refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\OLEDST_StageProductPrice.Outputs[OLE DB Destination Error Output]"
                           exclusionGroup="1"
                           isErrorOut="true"
-                          name="OLE DB Command Error Output"
-                          synchronousInputId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\OLECMD_UpdateCorpDB.Inputs[OLE DB Command Input]">
+                          name="OLE DB Destination Error Output"
+                          synchronousInputId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\OLEDST_StageProductPrice.Inputs[OLE DB Destination Input]">
                           <outputColumns>
                             <outputColumn
-                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\OLECMD_UpdateCorpDB.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\OLEDST_StageProductPrice.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                               dataType="i4"
-                              lineageId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\OLECMD_UpdateCorpDB.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                              lineageId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\OLEDST_StageProductPrice.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                               name="ErrorCode"
                               specialFlags="1" />
                             <outputColumn
-                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\OLECMD_UpdateCorpDB.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                              refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\OLEDST_StageProductPrice.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                               dataType="i4"
-                              lineageId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\OLECMD_UpdateCorpDB.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                              lineageId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\OLEDST_StageProductPrice.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                               name="ErrorColumn"
                               specialFlags="2" />
                           </outputColumns>
@@ -370,21 +380,73 @@ where ProductId = ?;</property>
                   </components>
                   <paths>
                     <path
-                      refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices.Paths[Flat File Source Output]"
-                      endId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\OLECMD_UpdateCorpDB.Inputs[OLE DB Command Input]"
+                      refId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage.Paths[Flat File Source Output]"
+                      endId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\OLEDST_StageProductPrice.Inputs[OLE DB Destination Input]"
                       name="Flat File Source Output"
-                      startId="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile.Outputs[Flat File Source Output]" />
+                      startId="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile.Outputs[Flat File Source Output]" />
                   </paths>
                 </pipeline>
               </DTS:ObjectData>
             </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\FOR_RunTest\SEQ_DemoTest\SQL_CreateStageTable"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{1F50A11A-E2F6-4CAB-B144-0EBEBFF51231}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="SQL_CreateStageTable"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A45E4BE6-58A4-4AB7-BE32-F7C3757EAE7D}"
+                  SQLTask:SqlStatementSource="drop table if exists stage.ProductPrice;&#xA;&#xA;create table stage.ProductPrice&#xA;(&#xA;&#x9;ProductId int,&#xA;&#x9;NewUnitPrice money&#xA;);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\FOR_RunTest\SEQ_DemoTest\SQL_UpdateFromStage"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{751472C5-A620-4C05-A86C-7A8C3DC39AF2}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="SQL_UpdateFromStage"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A45E4BE6-58A4-4AB7-BE32-F7C3757EAE7D}"
+                  SQLTask:SqlStatementSource="update prod&#xA;set UnitPrice = stg.NewUnitPrice&#xA;from dbo.Product prod&#xA;inner join stage.ProductPrice stg on stg.ProductId = prod.ProductId;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
           </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\FOR_RunTest\SEQ_DemoTest.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{8E216C6F-8260-42FD-9EEC-01C96D9F582B}"
+              DTS:From="Package\FOR_RunTest\SEQ_DemoTest\SQL_CreateStageTable"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\FOR_RunTest\SEQ_DemoTest.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{088CF62B-4E14-443F-8F9C-4B948E74610A}"
+              DTS:From="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package\FOR_RunTest\SEQ_DemoTest\SQL_UpdateFromStage" />
+          </DTS:PrecedenceConstraints>
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\FOR_RunTest\SQL_EndTime"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{9E31BCE8-FCFE-4693-98F5-F94605846D26}"
+          DTS:DTSID="{11E16F10-DFA1-427C-9B25-498806205005}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL_EndTime"
@@ -393,7 +455,7 @@ where ProductId = ?;</property>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ED0F3FF8-0EB5-4AF2-8241-A8D7F2DD464D}"
+              SQLTask:Connection="{A45E4BE6-58A4-4AB7-BE32-F7C3757EAE7D}"
               SQLTask:SqlStatementSource="update dbo.ExecutionResult&#xA;set EndTime = sysdatetime()&#xA;where ID = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
@@ -408,7 +470,7 @@ where ProductId = ?;</property>
           DTS:refId="Package\FOR_RunTest\SQL_StartTime"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{BECCB81D-2BDD-49A6-820F-1B4DB866F1BE}"
+          DTS:DTSID="{A3A7413A-25C4-41E9-8B5E-667F9431368F}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL_StartTime"
@@ -417,8 +479,8 @@ where ProductId = ?;</property>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{ED0F3FF8-0EB5-4AF2-8241-A8D7F2DD464D}"
-              SQLTask:SqlStatementSource="insert dbo.ExecutionResult(TestName, StartTime)&#xA;values (N'SSIS - Command', sysdatetime());&#xA;&#xA;select scope_identity() ExecutionResultID;"
+              SQLTask:Connection="{A45E4BE6-58A4-4AB7-BE32-F7C3757EAE7D}"
+              SQLTask:SqlStatementSource="insert dbo.ExecutionResult(TestName, StartTime)&#xA;values (N'SSIS - Staging', sysdatetime());&#xA;&#xA;select scope_identity() ExecutionResultID;"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
                 SQLTask:ResultName="ExecutionResultID"
@@ -431,7 +493,7 @@ where ProductId = ?;</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\FOR_RunTest.PrecedenceConstraints[Constraint 4]"
           DTS:CreationName=""
-          DTS:DTSID="{EBC8F639-3A46-4241-A3DF-96DC907602F7}"
+          DTS:DTSID="{D218510C-D689-4C43-80B5-1EC478936BB6}"
           DTS:From="Package\FOR_RunTest\SQL_StartTime"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
@@ -439,7 +501,7 @@ where ProductId = ?;</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\FOR_RunTest.PrecedenceConstraints[Constraint 5]"
           DTS:CreationName=""
-          DTS:DTSID="{32F458E0-8A0B-443F-8EFD-27C5AE24791F}"
+          DTS:DTSID="{59682371-6C43-4123-B3FD-182A8523C9F7}"
           DTS:From="Package\FOR_RunTest\SEQ_DemoTest"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 5"
@@ -458,48 +520,104 @@ where ProductId = ?;</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="173,42"
-          Id="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices"
-          TopLeft="43,18" />
+          Size="160,42"
+          Id="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage"
+          TopLeft="292,25" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\FOR_RunTest\SEQ_DemoTest\SQL_CreateStageTable"
+          TopLeft="54,28" />
+        <EdgeLayout
+          Id="Package\FOR_RunTest\SEQ_DemoTest.PrecedenceConstraints[Constraint]"
+          TopLeft="250,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42,0"
+              Start="0,0"
+              End="34.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="34.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="197,42"
+          Id="Package\FOR_RunTest\SEQ_DemoTest\SQL_UpdateFromStage"
+          TopLeft="268,112" />
+        <EdgeLayout
+          Id="Package\FOR_RunTest\SEQ_DemoTest.PrecedenceConstraints[Constraint 1]"
+          TopLeft="369.25,67">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="684,224"
-          Size="684,267"
+          PanelSize="701,246"
+          Size="701,289"
           Id="Package\FOR_RunTest\SEQ_DemoTest"
           TopLeft="79,103" />
         <NodeLayout
+          Size="151,42"
+          Id="Package\FOR_RunTest\SQL_EndTime"
+          TopLeft="82,450" />
+        <NodeLayout
           Size="155,42"
           Id="Package\FOR_RunTest\SQL_StartTime"
-          TopLeft="76,31" />
+          TopLeft="86,25" />
         <EdgeLayout
           Id="Package\FOR_RunTest.PrecedenceConstraints[Constraint 4]"
-          TopLeft="153.5,73">
+          TopLeft="163.5,67">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="267.5,30"
+              EndConnector="266,36"
               Start="0,0"
-              End="267.5,22.5">
+              End="266,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11" />
+                    End="0,14" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11"
-                    Point2="0,15"
-                    Point3="4,15" />
+                    Point1="0,14"
+                    Point2="0,18"
+                    Point3="4,18" />
                   <mssgle:LineSegment
-                    End="263.5,15" />
+                    End="262,18" />
                   <mssgle:CubicBezierSegment
-                    Point1="263.5,15"
-                    Point2="267.5,15"
-                    Point3="267.5,19" />
+                    Point1="262,18"
+                    Point2="266,18"
+                    Point3="266,22" />
                   <mssgle:LineSegment
-                    End="267.5,22.5" />
+                    End="266,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -508,36 +626,32 @@ where ProductId = ?;</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="151,42"
-          Id="Package\FOR_RunTest\SQL_EndTime"
-          TopLeft="86,454" />
         <EdgeLayout
           Id="Package\FOR_RunTest.PrecedenceConstraints[Constraint 5]"
-          TopLeft="421,370">
+          TopLeft="429.5,392">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-259.5,84"
+              EndConnector="-272,58"
               Start="0,0"
-              End="-259.5,76.5">
+              End="-272,50.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38" />
+                    End="0,25" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,38"
-                    Point2="0,42"
-                    Point3="-4,42" />
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="-4,29" />
                   <mssgle:LineSegment
-                    End="-255.5,42" />
+                    End="-268,29" />
                   <mssgle:CubicBezierSegment
-                    Point1="-255.5,42"
-                    Point2="-259.5,42"
-                    Point3="-259.5,46" />
+                    Point1="-268,29"
+                    Point2="-272,29"
+                    Point3="-272,33" />
                   <mssgle:LineSegment
-                    End="-259.5,76.5" />
+                    End="-272,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -549,40 +663,52 @@ where ProductId = ?;</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="845,567"
-          Size="845,610"
+          PanelSize="845,609"
+          Size="845,652"
           Id="Package\FOR_RunTest"
           TopLeft="280,63" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices">
+    design-time-name="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="217,42"
-          Id="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\OLECMD_UpdateCorpDB"
-          TopLeft="83,174" />
-        <NodeLayout
           Size="166,42"
-          Id="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices\FFSRC_CsvFile"
+          Id="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\FFSRC_CsvFile"
           TopLeft="107,62" />
+        <NodeLayout
+          Size="221,42"
+          Id="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\OLEDST_StageProductPrice"
+          TopLeft="113,175" />
         <EdgeLayout
-          Id="Package\FOR_RunTest\SEQ_DemoTest\DFT_UpdatePrices.Paths[Flat File Source Output]"
-          TopLeft="190.75,104">
+          Id="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage.Paths[Flat File Source Output]"
+          TopLeft="190,104">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,70"
+              EndConnector="33.5,71"
               Start="0,0"
-              End="0,62.5">
+              End="33.5,63.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,62.5" />
+                    End="0,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5"
+                    Point2="0,35.5"
+                    Point3="4,35.5" />
+                  <mssgle:LineSegment
+                    End="29.5,35.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.5,35.5"
+                    Point2="33.5,35.5"
+                    Point3="33.5,39.5" />
+                  <mssgle:LineSegment
+                    End="33.5,63.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -594,5 +720,18 @@ where ProductId = ?;</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FOR_RunTest\SEQ_DemoTest\DFT_LoadStage\OLEDST_StageProductPrice">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
