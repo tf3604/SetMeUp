@@ -15,11 +15,6 @@ public partial class UserDefinedFunctions
     [Microsoft.SqlServer.Server.SqlFunction(DataAccess = DataAccessKind.Read)]
     public static int DataAccessFunc(int orderId)
     {
-        //SqlConnectionStringBuilder sb = new SqlConnectionStringBuilder();
-        //sb.DataSource = @".\sql2016";
-        //sb.InitialCatalog = "CorpDB";
-        //sb.IntegratedSecurity = true;
-
         using (SqlConnection connection = new SqlConnection("context connection=true"))
         {
             connection.Open();
