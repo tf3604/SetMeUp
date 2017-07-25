@@ -12,11 +12,17 @@
           <AssociatedConnUserName />
           <FullPath>000 - Restore Database.sql</FullPath>
         </FileNode>
-        <FileNode Name="001 - Test Harness.sql">
+        <FileNode Name="001 - Create CLR Objects.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
-          <FullPath>001 - Test Harness.sql</FullPath>
+          <FullPath>001 - Create CLR Objects.sql</FullPath>
+        </FileNode>
+        <FileNode Name="002 - Test Harness.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>002 - Test Harness.sql</FullPath>
         </FileNode>
         <FileNode Name="010 - Cursor Customer.sql">
           <AssociatedConnectionMoniker />
