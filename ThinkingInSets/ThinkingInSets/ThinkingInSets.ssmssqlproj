@@ -24,6 +24,12 @@
           <AssociatedConnUserName />
           <FullPath>002 - Test Harness.sql</FullPath>
         </FileNode>
+        <FileNode Name="003 - Triangle Join Example.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>003 - Triangle Join Example.sql</FullPath>
+        </FileNode>
         <FileNode Name="010 - Cursor Customer.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />

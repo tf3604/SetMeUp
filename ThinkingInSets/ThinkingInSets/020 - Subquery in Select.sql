@@ -18,14 +18,14 @@ begin
 
 	insert #Orders (OrderId, OrderDate, CustomerId, Line1ProductId)
 	select oh.OrderId,
-	oh.OrderDate,
-	oh.CustomerId,
-	(
-		select top 1 od.ProductId
-		from dbo.OrderDetail od
-		where od.OrderId = oh.OrderId
-		order by od.OrderDetailId
-	) Line1ProductId
+		oh.OrderDate,
+		oh.CustomerId,
+		(
+			select top 1 od.ProductId
+			from dbo.OrderDetail od
+			where od.OrderId = oh.OrderId
+			order by od.OrderDetailId
+		) Line1ProductId
 	from dbo.OrderHeader oh;
 
 	declare @TestEndTime datetime2 = sysdatetime();
