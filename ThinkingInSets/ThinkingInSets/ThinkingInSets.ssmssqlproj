@@ -66,29 +66,41 @@
           <AssociatedConnUserName />
           <FullPath>021 - Rewrite as Apply.sql</FullPath>
         </FileNode>
-        <FileNode Name="022 - Rewrite as RowNum.sql">
+        <FileNode Name="022 - Rewrite using Temp Table.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
-          <FullPath>022 - Rewrite as RowNum.sql</FullPath>
+          <FullPath>022 - Rewrite using Temp Table.sql</FullPath>
         </FileNode>
-        <FileNode Name="023 - Subquery in Where.sql">
+        <FileNode Name="023 - Rewrite as RowNum.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
-          <FullPath>023 - Subquery in Where.sql</FullPath>
+          <FullPath>023 - Rewrite as RowNum.sql</FullPath>
         </FileNode>
-        <FileNode Name="024 - Rewrite as Apply.sql">
+        <FileNode Name="024 - Subquery in Where.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
-          <FullPath>024 - Rewrite as Apply.sql</FullPath>
+          <FullPath>024 - Subquery in Where.sql</FullPath>
         </FileNode>
-        <FileNode Name="025 - Rewrite as RowNum.sql">
+        <FileNode Name="025 - Rewrite as Apply.sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
-          <FullPath>025 - Rewrite as RowNum.sql</FullPath>
+          <FullPath>025 - Rewrite as Apply.sql</FullPath>
+        </FileNode>
+        <FileNode Name="026 - Rewrite using Temp Table.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>026 - Rewrite using Temp Table.sql</FullPath>
+        </FileNode>
+        <FileNode Name="027 - Rewrite as RowNum.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>027 - Rewrite as RowNum.sql</FullPath>
         </FileNode>
         <FileNode Name="030 - Scalar UDF.sql">
           <AssociatedConnectionMoniker />
