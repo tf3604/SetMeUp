@@ -37,8 +37,53 @@ namespace ThinkInSetsLib
         protected void ReadFileInformation(string rootDirName, int maxFileCount)
         {
             DirectoryInfo rootDir = new DirectoryInfo(rootDirName);
-            FileInfo[] files = rootDir.GetFiles("*", SearchOption.AllDirectories);
+            List<FileInfo> files = new List<FileInfo>();
+            GetAllFiles(files, rootDir, maxFileCount);
             _files = files.Take(maxFileCount).ToList();
+            Console.WriteLine($"Inserting {_files.Count} files.");
+        }
+
+        private void GetAllFiles(List<FileInfo> files, DirectoryInfo dir, int maxFileCount)
+        {
+            try
+            {
+                FileInfo[] dirFiles = dir.GetFiles();
+                files.AddRange(dirFiles);
+                if (files.Count > maxFileCount)
+                {
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+                // Swallow it.
+            }
+
+            try
+            {
+                DirectoryInfo[] subDirs = dir.GetDirectories();
+                foreach (DirectoryInfo subDir in subDirs)
+                {
+                    try
+                    {
+                        GetAllFiles(files, subDir, maxFileCount);
+                        if (files.Count > maxFileCount)
+                        {
+                            return;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        // Swallow it
+                    }
+                }
+            }
+            catch(Exception)
+            {
+                // Swallow it
+            }
+
+            return;
         }
     }
 }
