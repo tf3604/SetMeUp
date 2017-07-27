@@ -18,7 +18,8 @@ namespace ThinkInSetsTestHarness
             try
             {
                 if (runAllTests ||
-                    ArgsMatchPattern(args, "^.*singleton*.$"))
+                    ArgsMatchPattern(args, "^.*singleton*.$") ||
+                    ArgsMatchPattern(args, "^060$"))
                 {
                     Console.WriteLine("*** Singleton Test (#60)");
                     FileSystemSingletonInsertTest singletonTest = new FileSystemSingletonInsertTest(
@@ -32,7 +33,8 @@ namespace ThinkInSetsTestHarness
                 }
 
                 if (runAllTests ||
-                    ArgsMatchPattern(args, "^.*bulk.*copy.*$"))
+                    ArgsMatchPattern(args, "^.*bulk.*copy.*$") ||
+                    ArgsMatchPattern(args, "^061$"))
                 {
                     Console.WriteLine("*** Bulk Copy Test (#61)");
                     FileSystemBulkCopyTest bulkCopyTest = new FileSystemBulkCopyTest(
