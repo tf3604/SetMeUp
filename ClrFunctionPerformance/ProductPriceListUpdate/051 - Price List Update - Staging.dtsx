@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LUDMILLA"
   DTS:CreatorName="HANSENFAM\hansen"
-  DTS:DTSID="{F9693D99-362A-47C1-928C-EE18AEC08590}"
+  DTS:DTSID="{01C4051A-8F02-4E07-9DD5-3BD7050FAC62}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="13.0.2165.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="PriceListUpdate_Staging"
+  DTS:ObjectName="051 - Price List Update - Staging"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{5E84F19E-9242-4971-BB04-21C21E5F2C6E}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{AD845071-A604-4C67-9718-E80CF4005193}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -529,6 +529,10 @@
           Size="196,42"
           Id="Package\FOR_RunTest\SEQ_DemoTest\SQL_CreateStageTable"
           TopLeft="54,28" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\FOR_RunTest\SEQ_DemoTest\SQL_UpdateFromStage"
+          TopLeft="268,112" />
         <EdgeLayout
           Id="Package\FOR_RunTest\SEQ_DemoTest.PrecedenceConstraints[Constraint]"
           TopLeft="250,47.5">
@@ -551,10 +555,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="197,42"
-          Id="Package\FOR_RunTest\SEQ_DemoTest\SQL_UpdateFromStage"
-          TopLeft="268,112" />
         <EdgeLayout
           Id="Package\FOR_RunTest\SEQ_DemoTest.PrecedenceConstraints[Constraint 1]"
           TopLeft="369.25,67">

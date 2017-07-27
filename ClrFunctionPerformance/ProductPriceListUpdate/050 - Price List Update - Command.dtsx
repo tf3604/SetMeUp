@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LUDMILLA"
   DTS:CreatorName="HANSENFAM\hansen"
-  DTS:DTSID="{938E2FAD-2B4A-4891-B736-1422AB2118A6}"
+  DTS:DTSID="{F53E4E62-8A63-4217-B32A-84739F47350D}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="13.0.2165.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="PriceListUpdate_Command"
+  DTS:ObjectName="050 - Price List Update - Command"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{3786A179-82FA-4F03-ABF1-CCBB12DB046D}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{D2E92C43-2C72-45B2-81FD-F755A4324406}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -471,6 +471,10 @@ where ProductId = ?;</property>
           Id="Package\FOR_RunTest\SEQ_DemoTest"
           TopLeft="79,103" />
         <NodeLayout
+          Size="151,42"
+          Id="Package\FOR_RunTest\SQL_EndTime"
+          TopLeft="86,454" />
+        <NodeLayout
           Size="155,42"
           Id="Package\FOR_RunTest\SQL_StartTime"
           TopLeft="76,31" />
@@ -508,10 +512,6 @@ where ProductId = ?;</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="151,42"
-          Id="Package\FOR_RunTest\SQL_EndTime"
-          TopLeft="86,454" />
         <EdgeLayout
           Id="Package\FOR_RunTest.PrecedenceConstraints[Constraint 5]"
           TopLeft="421,370">
