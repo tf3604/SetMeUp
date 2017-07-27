@@ -174,11 +174,11 @@
           <AssociatedConnUserName />
           <FullPath>050 - SSIS - Command (Results).sql</FullPath>
         </FileNode>
-        <FileNode Name="051 - SSIS - Staging.sql">
+        <FileNode Name="051 - SSIS - Staging (Results).sql">
           <AssociatedConnectionMoniker />
           <AssociatedConnSrvName />
           <AssociatedConnUserName />
-          <FullPath>051 - SSIS - Staging.sql</FullPath>
+          <FullPath>051 - SSIS - Staging (Results).sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
