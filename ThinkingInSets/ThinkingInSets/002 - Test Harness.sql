@@ -6,7 +6,7 @@ while @loopNbr < 5
 begin
 	declare @TestStartTime datetime2 = sysdatetime();
 
-	-- Do nothing
+	-- Do something
 
 	declare @TestEndTime datetime2 = sysdatetime();
 
