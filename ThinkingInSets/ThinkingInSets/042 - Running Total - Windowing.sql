@@ -1,6 +1,6 @@
 -----------------------------------------------------------------------------------------------------------------------
 -- 042 - Running Total - Windowing.sql
--- Version 1.0.0
+-- Version 1.0.2
 -- Look for the most recent version of this script at www.tf3604.com/sets.
 -- MIT License.  See the bottom of this file for details.
 -----------------------------------------------------------------------------------------------------------------------
