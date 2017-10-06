@@ -1,6 +1,6 @@
 -----------------------------------------------------------------------------------------------------------------------
 -- 020 - Subquery in Select.sql
--- Version 1.0.2
+-- Version 1.0.3
 -- Look for the most recent version of this script at www.tf3604.com/sets.
 -- MIT License.  See the bottom of this file for details.
 -----------------------------------------------------------------------------------------------------------------------
